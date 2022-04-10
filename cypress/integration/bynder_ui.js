@@ -5,7 +5,7 @@ var locator_input_password = '#inputPassword'
 var locator_link_nederlands = '#languageSwitch > ul > li:nth-child(1) > form > a'
 var locator_link_homepage = '#login > header > div > ul > li > a'
 var locator_link_acceptcookies = '#cookieconsent > div > div > div > div > div.cookiechoices > span > span'
-
+var locator_button_support = "#custom-support-form-button"
 var incorrect_username = makeRandomUsername() //Used to circumvent the robot detector script, sorry :)
 
 var correct_username = 'mwsluis@icloud.com'
@@ -72,9 +72,11 @@ describe('Contact support form shows', function() {
     it('Clicks contact support button', function() {
         cy.visit(url_wave_trial_login)
 
-        cy.get("#custom-support-form-button").click()
+        cy.get(locator_button_support).click()
 
-        cy.contains('Support')
+        cy.contains('Cancel').should('be.enabled')
+
+        cy.contains('Send').should('be.enabled')
     })
 })
 
