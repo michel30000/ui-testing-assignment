@@ -18,8 +18,8 @@ To run these tests use
 
 I have only tested this command on macOs, but it should work in Powershell/Windows as long as your docker daemon is running.
 
-## Github actions
-I have also implemented running the tests in github actions. The repository is configured to run in github actions on every push. See https://github.com/michel30000/ui-testing-assignment/actions
+## Github actions 
+I have also implemented running the tests in github actions. The workflow file .github/workflows/run-cypress-tests.yml defines the process of checking out and running the tests in github actions. The repository is configured to run the workflow on every push. See https://github.com/michel30000/ui-testing-assignment/actions
 
 ## Notes
 I am using the Cypress config option `"chromeWebSecurity": false` to allow the test case "Click Bynder homepage button" to navigate away from the original visit() url.
