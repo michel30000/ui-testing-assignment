@@ -1,3 +1,5 @@
+var url_wave_trial_login = 'https://wave-trial.getbynder.com/login/'
+
 var locator_input_username = '#inputEmail'
 var locator_input_password = '#inputPassword'
 var locator_link_nederlands = '#languageSwitch > ul > li:nth-child(1) > form > a'
@@ -12,7 +14,7 @@ var correct_password = 'givemeone'
 
 describe('Login with correct credentials', function() {
     it('Logs in with correct credentials', function() {
-        cy.visit('https://wave-trial.getbynder.com/login/')
+        cy.visit(url_wave_trial_login)
 
         cy.get(locator_input_username).should('be.enabled').type(correct_username)
 
@@ -27,7 +29,7 @@ describe('Login with correct credentials', function() {
 
 describe('Login with incorrect credentials', function() {
     it('Logs in with incorrect credentials', function() {
-        cy.visit('https://wave-trial.getbynder.com/login/')
+        cy.visit(url_wave_trial_login)
 
         cy.get(locator_input_username).should('be.enabled').type(incorrect_username)
 
@@ -41,7 +43,7 @@ describe('Login with incorrect credentials', function() {
 
 describe('Change page language to Dutch', function() {
     it('Changes the language to Dutch', function() {
-        cy.visit('https://wave-trial.getbynder.com/login/')
+        cy.visit(url_wave_trial_login)
 
         cy.contains('Language').click()
 
@@ -53,7 +55,7 @@ describe('Change page language to Dutch', function() {
 
 describe('Click Bynder homepage button', function() {
     it('Clicks the Bynder homepage button', function() {
-        cy.visit('https://wave-trial.getbynder.com/login/')
+        cy.visit(url_wave_trial_login)
 
         cy.get(locator_link_homepage).click()
         
@@ -66,13 +68,13 @@ describe('Click Bynder homepage button', function() {
     })
 })
 
-describe('Contact support with incorrect captcha', function() {
-    it('Contacts support with incorrect captcha', function() {
-        cy.visit('https://wave-trial.getbynder.com/login/')
+describe('Contact support form shows', function() {
+    it('Clicks contact support button', function() {
+        cy.visit(url_wave_trial_login)
+
         cy.get("#custom-support-form-button").click()
+
         cy.contains('Support')
-        
-        
     })
 })
 
