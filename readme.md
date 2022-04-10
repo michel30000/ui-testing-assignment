@@ -5,11 +5,11 @@ This is my first ever cypress/javascript project. It contains tests for the Bynd
 For some reason I have not received a password for my trial account. Also when I use the forgot password functionality, I do not receive a password reset e-mail. As such I have been unable to write a test case for a correct login/logout. I hope my other test cases make up for it.
 
 ## Test scenarios
-* Login with correct credentials
-* Login with incorrect credentials
-* Change page language to Dutch
-* Click Bynder homepage button
-* Contact support form shows
+* Login with correct credentials: This test case verifies users can log in using their credentials. This case is unfinished, see my note above.
+* Login with incorrect credentials: This test case verifies the login page behaves correctly when users enter wrong login credentials.
+* Change page language to Dutch: Verifies that users can change the page language, in the case of this test, to Dutch.
+* Click Bynder homepage button: Verify that the Bynder homepage button links to the correct url and the page loads.
+* Contact support form shows: Verifies that users can click the Support button, and are presented with the 'contact support' form.
 
 ## Running the tests
 To run these tests use
