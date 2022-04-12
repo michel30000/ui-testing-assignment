@@ -54,7 +54,7 @@ describe('Change page language to Dutch', function() {
 
         cy.contains('Language').click()
 
-        cy.get(locator_link_nederlands).click()
+        cy.get(locator_link_nederlands).should('be.enabled').click()
 
         cy.contains('Inloggen')
     })
