@@ -25,7 +25,8 @@ describe('Login with correct credentials', function() {
         cy.contains('Login').click()
 
         cy.url().should('include', '/account/dashboard')
-        
+    })
+    it('Logs out', function() {
         cy.get(locator_link_profile).click()
 
         cy.get(locator_button_logout).should('be.enabled').click()
