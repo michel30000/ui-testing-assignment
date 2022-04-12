@@ -10,3 +10,7 @@ jobs:
       # and run all Cypress tests
       - name: Cypress run
         uses: cypress-io/github-action@v2
+      - uses: actions/upload-artifact@v3
+        with:
+          name: failed test screenshots
+          path: /home/runner/work/ui-testing-assignment/ui-testing-assignment/cypress/screenshots/
