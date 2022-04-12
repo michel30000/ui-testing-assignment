@@ -2,7 +2,7 @@ var url_wave_trial_login = 'https://wave-trial.getbynder.com/login/'
 
 var locator_input_username = '#inputEmail'
 var locator_input_password = '#inputPassword'
-var locator_link_nederlands = '#languageSwitch > ul > li:nth-child(1) > form > a'
+var locator_form_nederlands = '#languageSwitch > ul > li:nth-child(1) > form'
 var locator_link_homepage = '#login > header > div > ul > li > a'
 var locator_link_acceptcookies = '#cookieconsent > div > div > div > div > div.cookiechoices > span > span'
 var locator_link_profile = 'body > header > div.admin-bar.clearfix > div.admin-right > ul.admin-options > li:nth-child(1) > a'
@@ -54,7 +54,7 @@ describe('Change page language to Dutch', function() {
 
         cy.contains('Language').click()
 
-        cy.get('#languageSwitch > ul > li:nth-child(1) > form').submit()
+        cy.get(locator_form_nederlands).submit()
 
         cy.contains('Inloggen')
     })
