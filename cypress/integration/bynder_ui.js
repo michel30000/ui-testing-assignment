@@ -5,11 +5,13 @@ var locator_input_password = '#inputPassword'
 var locator_link_nederlands = '#languageSwitch > ul > li:nth-child(1) > form > a'
 var locator_link_homepage = '#login > header > div > ul > li > a'
 var locator_link_acceptcookies = '#cookieconsent > div > div > div > div > div.cookiechoices > span > span'
+var locator_link_profile = 'body > header > div.admin-bar.clearfix > div.admin-right > ul.admin-options > li:nth-child(1) > a'
 var locator_button_support = "#custom-support-form-button"
+var locator_button_logout = 'body > header > div.admin-bar.clearfix > div.admin-right > ul.admin-options > li:nth-child(1) > div > ul > li.logout > form > button'
 var incorrect_username = makeRandomUsername() //Used to circumvent the robot detector script, sorry :)
 
 var correct_username = 'mwsluis@icloud.com'
-var correct_password = 'givemeone'
+var correct_password = 'fuHrav-jejtyp-xyhbu3'
 
 
 describe('Login with correct credentials', function() {
@@ -24,6 +26,11 @@ describe('Login with correct credentials', function() {
 
         cy.url().should('include', '/account/dashboard')
         
+        cy.get(locator_link_profile).click()
+
+        cy.get(locator_button_logout).should('be.enabled').click()
+
+        cy.contains('Login')
     })
 })
 
